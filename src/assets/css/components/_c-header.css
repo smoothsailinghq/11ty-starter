@@ -1,0 +1,17 @@
+.c-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--u-m);
+  padding: var(--u-s-m) var(--u-s-m);
+}
+
+.c-header__group {
+  display: flex;
+  align-items: center;
+}
+
+.c-header__group--nav {
+  @media (--navigation-max) {
+    flex-direction: row-reverse;
+  }
+}

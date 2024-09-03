@@ -1,0 +1,158 @@
+:root,
+::backdrop {
+  --sans-font: 'Lexend', -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+  --mono-font: 'PlexMono', Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --bold: 700;
+  --regular: 400;
+
+  @utopia typeScale({
+    minWidth: 320,
+    maxWidth: 1240,
+    minFontSize: 16,
+    maxFontSize: 18,
+    minTypeScale: 1.2,
+    maxTypeScale: 1.25,
+    positiveSteps: 6,
+    negativeSteps: 2,
+    prefix: "h",
+  });
+
+  @utopia spaceScale({
+    minWidth: 320,
+    maxWidth: 1240,
+    minSize: 16,
+    maxSize: 18,
+    positiveSteps: [1.5, 2, 3, 4, 6],
+    negativeSteps: [0.75,0.5,0.25],
+    customSizes: [],
+    prefix: "u",
+  });
+
+  --color-mode: light;
+
+  --tint: 216;
+
+  --brand-900: hsl(var(--tint), 80%, 15%);
+  --brand-800: hsl(var(--tint), 80%, 20%);
+  --brand-700: hsl(var(--tint), 80%, 25%);
+  --brand-600: hsl(var(--tint), 70%, 40%);
+  --brand-500: hsl(var(--tint), 70%, 70%);
+  --brand-300: hsl(var(--tint), 20%, 82%);
+  --brand-200: hsl(var(--tint), 20%, 87%);
+  --brand-100: hsl(var(--tint), 20%, 90%);
+  --brand-50: hsl(var(--tint), 10%, 95%);
+
+  --bg: var(--brand-100);
+  --bg-light: var(--brand-50);
+  --bg-dark: var(--brand-200);
+  --accent-bg: var(--brand-300);
+  --text: var(--brand-700);
+  --text-light: var(--brand-600);
+  --border: var(--brand-200);
+  --accent: var(--brand-600);
+  --accent-two: var(--brand-500);
+  --code: var(--brand-700);
+  --preformatted: var(--brand-700);
+  --marked: var(--brand-700);
+  --disabled: var(--brand-700);
+
+  --outline: var(--brand-500);
+  --selection-c: var(--brand-100);
+  --selection-bg: var(--brand-600);
+
+  --link-c: var(--brand-700);
+  --link-h: var(--brand-700);
+  --link-a: var(--brand-700);
+
+  --nav-c: var(--brand-700);
+  --nav-h: var(--brand-700);
+  --nav-a: var(--brand-50);
+  --nav-bg: var(--brand-700);
+  --nav-m-c: var(--brand-100);
+  --nav-m-h: var(--brand-100);
+  --nav-m-a: var(--brand-100);
+
+  --button-c: var(--brand-100);
+  --button-h-c: var(--brand-100);
+  --button-bg: var(--brand-700);
+  --button-h-bg: var(--brand-700);
+
+  --button-s-c: var(--brand-700);
+  --button-s-h-c: var(--brand-700);
+  --button-s-bg: var(--brand-700);
+  --button-s-h-bg: var(--brand-700);
+
+  --transition: .3s cubic-bezier(0.2, 0, 0, 1);
+  --curve: cubic-bezier(0.2, 0, 0, 1);
+}
+
+
+[data-user-color-scheme='dark'] {
+  &:root,
+  &::backdrop {
+    --bg: var(--brand-700);
+    --bg-light: var(--brand-800);
+    --bg-dark: var(--brand-900);
+    --accent-bg: var(--brand-300);
+    --text: var(--brand-100);
+    --text-light: var(--brand-200);
+    --border: var(--brand-600);
+    --accent: var(--brand-500);
+    --accent-two: var(--brand-600);
+    --code: var(--brand-100);
+    --preformatted: var(--brand-100);
+    --disabled: #111;
+
+    --outline: var(--brand-500);
+    --selection-c: var(--brand-700);
+  --selection-bg: var(--brand-100);
+
+    --link-c: var(--brand-100);
+    --link-h: var(--brand-100);
+    --link-a: var(--brand-100);
+
+    --nav-c: var(--brand-100);
+    --nav-h: var(--brand-100);
+    --nav-a: var(--brand-800);
+    --nav-bg: var(--brand-100);
+    --nav-m-c: var(--brand-700);
+    --nav-m-h: var(--brand-700);
+    --nav-m-a: var(--brand-700);
+
+    --button-c: var(--brand-700);
+    --button-h-c: var(--brand-700);
+    --button-bg: var(--brand-100);
+    --button-h-bg: var(--brand-100);
+
+    --button-s-c: var(--brand-700);
+    --button-s-h-c: var(--brand-700);
+    --button-s-bg: var(--brand-100);
+    --button-s-h-bg: var(--brand-100);
+  }
+
+  /* Add a bit of transparency so light media isn't so glaring in dark mode */
+  & img,
+  & video {
+    /* opacity: .9; */
+  }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: dark;
+  }
+}
+
+/* Media Queries */
+@custom-media --tiny (min-width: 480px);
+@custom-media --xsmall (min-width: 540px);
+@custom-media --small (min-width: 780px);
+@custom-media --small-max (max-width: 780px);
+@custom-media --medium-max (max-width: 1023px);
+@custom-media --medium (min-width: 1023px);
+@custom-media --large (min-width: 1280px);
+@custom-media --large-max (max-width: 1280px);
+@custom-media --huge (min-width: 1640px);
+@custom-media --navigation-max (max-width: 720px);
+@custom-media --navigation-min (min-width: 720px);

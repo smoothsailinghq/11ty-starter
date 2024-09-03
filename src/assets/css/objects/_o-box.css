@@ -1,0 +1,42 @@
+.o-box {
+  display: block;
+  padding: var(--u-s-m);
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.o-box-horizontal {
+  display: block;
+  padding-inline: var(--u-s-m);
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  @media (--medium) {
+    padding-block: var(--u-s-m);
+  }
+}
+
+.o-box--flush {
+  padding: 0;
+}
+
+.o-box--tiny {
+  padding: var(--u-xs-s);
+}
+
+.o-box--small {
+  padding: var(--u-s-m);
+}
+
+.o-box--large {
+  padding: var(--u-l-xl);
+}
+
+.o-box--huge {
+  padding: var(--u-l-2xl);
+}
+

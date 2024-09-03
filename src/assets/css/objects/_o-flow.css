@@ -1,0 +1,19 @@
+.o-flow {
+  & > * + * {
+    margin-top: var(--u-m-l);
+  }
+}
+
+.o-flow-small {
+  & > * + * {
+    margin-top: var(--u-s-m);
+  }
+}
+
+.o-flow-large {
+  @media (--small) {
+    & > * + * {
+      margin-top: var(--u-l-xl);
+    }
+  }
+}

@@ -1,0 +1,58 @@
+a:not([class*="c-"]),
+.b-link {
+  color: var(--link-c);
+  display: inline-flex;
+  gap: .75ex;
+  align-items: center;
+  text-decoration: underline;
+  text-decoration-color: var(--link-u);
+  text-underline-offset: .3ex;
+  text-decoration-thickness: .15ex;
+  transition: color var(--transition), text-decoration-color var(--transition);
+  font-family: var(--font-family);
+  border-radius: var(--u-2xs);
+  font-weight: var(--font-weight-bold);
+
+  &,
+  &:visited {
+    color: var(--link-c);
+  }
+
+  &:hover {
+    color: var(--link-h);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration-style: dotted;
+  }
+}
+
+.b-inline-link {
+  color: var(--link-c);
+  text-decoration: underline;
+  text-decoration-color: var(--link-u);
+  text-underline-offset: .3ex;
+  text-decoration-thickness: .15ex;
+  transition: color var(--transition), text-decoration-color var(--transition);
+  font-family: var(--font-family);
+  border-radius: var(--u-2xs);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--h-1);
+  bottom: 1cap;
+  position: relative;
+
+  &,
+  &:visited {
+    color: var(--link-c);
+  }
+
+  &:hover {
+    color: var(--link-h);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration-style: dotted;
+  }
+}

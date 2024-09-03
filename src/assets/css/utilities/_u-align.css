@@ -1,0 +1,14 @@
+.u-align-right {
+  text-align: right;
+}
+
+.u-align-center {
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-align-left {
+  text-align: left;
+}

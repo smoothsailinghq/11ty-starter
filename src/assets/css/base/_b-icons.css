@@ -1,0 +1,21 @@
+.b-icon {
+  flex-shrink: 0;
+  display: block;
+  width: 1.5ex;
+  height: 1.5ex;
+  position: relative;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  margin-top: 1ex - 1cap;
+}
+
+.b-icon--large {
+  width: 2ex;
+  height: 2ex;
+  opacity: .9;
+}
+
+.b-icon--tint {
+  opacity: .5;
+}

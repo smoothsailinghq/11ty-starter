@@ -1,0 +1,58 @@
+button:not([class]),
+.c-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+  white-space: nowrap;
+  text-decoration: none;
+  gap: var(--u-3xs);
+  border: .1rem solid transparent;
+  border-radius: var(--u-m);
+  padding: var(--u-2xs);
+  font-family: var(--font-family);
+  font-size: var(--h-0);
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition), background-color var(--transition), border-color var(--transition);
+
+  & .b-icon {
+    width: var(--u-s);
+    height: var(--u-s);
+  }
+
+  &,
+  &:active {
+    color: var(--button-c);
+    background-color: var(--button-bg);
+    border-color: var(--button-bg);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--button-h-c);
+    border-color: var(--button-h-bg);
+    background-color: var(--button-h-bg);
+  }
+}
+
+.c-btn--secondary {
+  &,
+  &:active {
+    color: var(--button-s-bgc);
+    background-color: var(--button-s-bg);
+    border-color: var(--button-s-bg);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--button-s-h-c);
+    border-color: var(--button-s-h-bg);
+    background-color: var(--button-s-h-bg);
+  }
+}
+
+.c-btn--small {
+  font-size: var(--h--1);
+}

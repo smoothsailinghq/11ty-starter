@@ -1,0 +1,55 @@
+<header class="c-header">
+  <div class="c-header__group">
+    {% if page.url == '/' %}
+    <p class="c-brand">
+      <span class="c-brand__type">
+        11ty overview
+      </span>
+    </p>
+    {% else %}
+    <a href="{{ '/' | url }}" class="c-brand c-brand--link">
+      <span class="c-brand__type">
+        11ty overview
+      </span>
+    </a>
+    {% endif %}
+  </div>
+  <div class="c-header__group c-header__group--nav">
+    <is-land on:visible on:idle on:media="(max-width: 970px)">
+      <nav class="c-nav js-nav">
+        <button
+          type="button"
+          class="c-nav__toggle js-nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="c-menuicon" aria-hidden="true">
+            <span class="c-menuicon__bar"></span>
+            <span class="c-menuicon__bar"></span>
+            <span class="c-menuicon__bar"></span>
+          </span>
+          <span class="c-nav__toggle-text u-visually-hidden">Toggle menu</span>
+        </button>
+        <ul class="c-nav__menu js-nav-menu" id="nav-menu">
+          {%- for entry in collections.all | eleventyNavigation %}
+          <li class="c-nav__item">
+            {%- set isCurrent = (entry.url == page.url) -%}
+            {%- set isParent = entry.url != '/' and title in entry.title -%}
+            {%- set isSection = section in entry.title -%}
+            <a href="{{ entry.url | url }}" class="c-nav__link {% if isCurrent or isParent or isSection %} is-active{% endif %}">{{
+              entry.title }}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <template data-island>
+        <script>
+          new window.Navigation();
+        </script>
+      </template>
+    </is-land>
+  </div>
+</header>
+
+

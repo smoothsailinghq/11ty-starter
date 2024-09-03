@@ -1,0 +1,20 @@
+.o-row {
+  padding-top: var(--u-m-l);
+  padding-bottom: var(--u-m-l);
+}
+  
+.o-row-large {
+  padding-top: var(--u-l-xl);
+  padding-bottom: var(--u-l-xl);
+}
+
+.o-row-huge {
+  padding-top: var(--u-2xl-3xl);
+  padding-bottom: var(--u-2xl-3xl);
+}
+
+.o-row-repeater {
+  & + & {
+    padding-top: 0;
+  }
+}

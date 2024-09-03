@@ -1,0 +1,40 @@
+.c-skiplink {
+  font-size: var(--fs-0);
+  font-weight: var(--font-weight-bold);
+  padding: var(--u-xs);
+  background-color: var(--link-c);
+  border-radius: var(--radius);
+  position: absolute;
+  white-space: nowrap;
+  top: -1000px;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  display: block;
+  text-decoration: underline;
+  text-decoration-color: var(--border-light);
+  text-underline-offset: .3ex;
+  text-decoration-thickness: .15ex;
+  text-align: center;
+  transition: color var(--transition);
+
+  &,
+  &:visited {
+    color: var(--bg);
+  }
+
+  &:hover {
+    color: var(--bg);
+    text-decoration-style: dotted;
+  }
+
+  &:focus {
+    position: relative;
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    margin: var(--u2) var(--u2);
+    outline-offset: calc(var(--u-2xs) * -1);
+  }
+}

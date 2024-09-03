@@ -1,0 +1,251 @@
+.c-nav {
+  display: flex;
+  font-size: var(--h-1);
+
+  @media (--navigation-min) {
+    font-size: var(--h-0);
+  }
+}
+
+.c-nav__menu {
+  display: flex;
+  gap: var(--u-s);
+  padding: 0;
+  margin: 0;
+  list-style-type: '';
+
+  @media (--navigation-max) {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--u-l);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: var(--nav-bg);
+      border-radius: var(--u-3xs);
+      top: var(--u-3xs);
+      left: var(--u-3xs);
+      width: calc(100% - var(--u-2xs));
+      height: calc(100% - var(--u-2xs));
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.is-open .c-nav__menu {
+  @media (--navigation-max) {
+    display: flex;
+    animation-name: --navigation;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+
+    &:before {
+      animation-name: --navigationBackground;
+      animation-duration: .3s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.c-nav__link {
+  display: block;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: var(--u-m);
+  padding: var(--u-3xs) var(--u-xs) calc(var(--u-3xs) + .2ex);
+  text-underline-offset: .3ex;
+  text-decoration-thickness: 2px;
+
+  &,
+  &:active {
+    color: var(--nav-c);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--nav-h);
+    text-decoration-style: dotted;
+  }
+
+  &.is-active {
+    background-color: var(--nav-a);
+    border-color: var(--nav-a);
+    text-decoration: none;
+  }
+
+  @media (--navigation-max) {
+    &.is-active {
+      background-color: transparent;
+    }
+  }
+}
+
+.is-open .c-nav__link {
+  @media (--navigation-max) {
+    &,
+    &:active {
+      color: var(--nav-m-c);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--nav-m-h);
+    }
+
+    &.is-active {
+      border-color: var(--nav-m-a);
+    }
+  }
+}
+
+.c-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--u-xs);
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: var(--u-m);
+  padding: var(--u-3xs) var(--u-xs) calc(var(--u-3xs) + .2ex);
+  text-underline-offset: .3ex;
+  text-decoration-thickness: 2px;
+
+  &,
+  &:active {
+    color: var(--bg);
+    background-color: color-mix(in hsl, var(--nav-c), white 10%);
+    border-color: color-mix(in hsl, var(--nav-c), white 10%);
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--bg);
+    background-color: color-mix(in hsl, var(--nav-c), white 20%);
+    border-color: color-mix(in hsl, var(--nav-c), white 20%);
+  }
+}
+
+.is-open .c-nav__btn {
+  @media (--navigation-max) {
+    &,
+    &:active {
+      color: var(--nav-c);
+      background-color: var(--bg);
+      border-color: var(--bg);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--nav-h);
+    }
+  }
+}
+
+
+
+@keyframes --navigation {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes --navigationBackground {
+  from {transform: scale(.2);}
+  to {transform: scale(1);}
+}
+
+/* Mobile navigation */
+.c-nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--h--1);
+  background-color: transparent;
+  color: var(--nav-c);
+  border: 0;
+  border-radius: var(--u-m);
+  font-weight: var(--bold);
+  padding: 0;
+  transition: background-color var(--transition);
+  z-index: 3;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+
+  &:hover {
+    color: var(--nav-h);
+    background-color: var(--bg);
+  }
+
+  @media (--navigation-max) {
+    display: flex;
+  }
+}
+
+.c-nav__toggle-text {
+  white-space: nowrap;
+}
+
+.has-nav .c-nav__toggle {
+  @media (--navigation-max) {
+    color: var(--nav-m-c);
+    border-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.c-menuicon {
+  flex: none;
+  display: block;
+  width: 24px;
+  height: 12px;
+  bottom: .2ex;
+  position: relative;
+  transition: transform 0.3s var(--curve);
+
+  & .c-menuicon__bar {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 2px;
+    width: 100%;
+    background-color: currentColor;
+    transition: transform 0.3s var(--curve);
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+    &:nth-child(2) {
+      top: 50%;
+    }
+    &:nth-child(3) {
+      top: 100%;
+    }
+  }
+}
+
+.is-open .c-menuicon {
+  & .c-menuicon__bar {
+    &:nth-child(1) {
+      transform: translateY(6px);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-6px);
+    }
+  }
+}

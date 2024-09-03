@@ -1,0 +1,51 @@
+.b-hero {
+  font-size: var(--h-4);
+  line-height: 1.25;
+
+  & span {
+    color: var(--accent);
+  }
+
+  @media (--small) {
+    font-size: var(--h-5);
+  }
+
+  @media (--large) {
+    font-size: var(--h-6);
+  }
+}
+
+.b-regular {
+  font-weight: var(--regular);
+}
+
+.b-lead {
+  font-size: var(--h-2);
+  line-height: 1.5;
+}
+
+.b-title {
+  font-size: var(--h-2);
+  line-height: 1.5;
+  margin-top: 0;
+  max-width: 45ch;
+}
+
+.b-subtitle {
+  font-size: var(--h-1);
+  line-height: 1.5;
+  margin-top: 0;
+  max-width: 45ch;
+}
+
+.b-small {
+  font-size: var(--h--1);
+}
+
+.b-content {
+  font-size: var(--h-0);
+
+  @media (--large) {
+    font-size: var(--h-1);
+  }
+}

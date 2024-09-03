@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or metadata.title }}</title>
+  
+  {% include 'partials/fonts.njk' %}
+
+  {% if not build.dev %}
+    {% viteLinkStylesheetTags %}
+  {% endif %}
+
+  <link rel="preload" href="/assets/fonts/lexend-deca-v21-latin-regular.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="/assets/fonts/lexend-deca-v21-latin-600.woff2" as="font" type="font/woff2" crossorigin="">
+
+  {% include 'partials/meta.njk' %}
+</head>
+
+<body>
+  {% iconsprite %}
+
+  <a href="#main" class="c-skiplink">Skip to the content</a>
+
+  {% include 'partials/header.njk' %}
+
+  <main id="main" tabindex="-1" class="o-layout">
+    {{ content | safe }}
+  </main>
+
+  {% include 'partials/footer.njk' %}
+
+  {% if build.dev %}
+    <script type="modulepreload" src="http://localhost:5173/@vite/client"></script>
+    <script type="module" src="http://localhost:5173/src/assets/js/main.js"></script>
+  {% else %}
+    {% viteScriptTag %}
+  {% endif %}
+</body>
+</html>

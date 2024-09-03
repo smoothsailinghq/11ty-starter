@@ -1,0 +1,72 @@
+:root {
+  --input-height: 4.5ex;
+}
+
+input,
+textarea {
+  color: var(--page-c);
+  background-color: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius);
+  padding: 0 var(--u4) .1ex;
+  font-weight: 400;
+  height: var(--input-height);
+  font-size: var(--h6);
+  width: 100%;
+
+  &:focus {
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+
+  @media (--small) {
+    font-size: var(--h5);
+  }
+}
+
+input::placeholder {
+  color: var(--neutral-400);
+  opacity: 1;
+}
+
+
+select {
+  color: var(--page-c);
+  background-color: var(--page-bg);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius);
+  padding: var(--u1);
+  font-size: var(--h5);
+
+  &:focus-visible {
+    outline-offset: 2px;
+  }
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+/* base-details-summary */
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* hide up & down arrow buttons (spinner) in input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

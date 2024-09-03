@@ -1,0 +1,7 @@
+.c-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--u-m);
+  padding: var(--u-s-m) var(--u-s-m);
+}
