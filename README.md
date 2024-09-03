@@ -8,9 +8,10 @@ Uses:
 
 ## How to use
 
-Base folder: `src/`
-Output folder: `dist/`
-Local url: `http://localhost:4200/`
+Default structure:
+- Base folder: `src/`
+- Output folder: `dist/`
+- Local url: `http://localhost:4200/`
 
 Install:
 - `npm i --legacy-peer-deps`
